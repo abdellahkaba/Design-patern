@@ -12,7 +12,9 @@ public class Main {
         LazyInitialization.getInstance() ;
         System.out.println("************************");
        for (int i = 0; i< 5; i++){
-           ThreadSingleton.getInstance() ;
+           ThreadSingleton.getDoubleCheckInstance() ;
+           ThreadSingleton.getDoubleCheckInstance() ;
+           ThreadSingleton.getDoubleCheckInstance() ;
        }
 
 

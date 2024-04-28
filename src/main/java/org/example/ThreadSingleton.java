@@ -6,14 +6,18 @@ public class ThreadSingleton {
     private ThreadSingleton (){
     }
 
-    public static synchronized ThreadSingleton getInstance() {
+    public static ThreadSingleton getDoubleCheckInstance() {
         if (instance == null) {
-            instance = new ThreadSingleton() ;
-            System.out.println("Synchronize thread instance de la classe");
+            synchronized (ThreadSingleton.class) {
+                if (instance == null) {
+                    instance = new ThreadSingleton() ;
+                    System.out.println("Double ThreadSaveDoubleCheick");
+                }
+            }
             return instance ;
         }
 
-        System.out.println("Returning Synchronize thread instance de la classe");
+        System.out.println("Returning Synchronize thread instance DoubleCheck de la classe");
 
         return instance ;
     }
