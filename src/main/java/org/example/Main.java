@@ -10,5 +10,13 @@ public class Main {
         LazyInitialization.getInstance() ;
         System.out.println("************************");
         LazyInitialization.getInstance() ;
+        System.out.println("************************");
+       for (int i = 0; i< 5; i++){
+           ThreadSingleton.getInstance() ;
+       }
+
+
+
+
     }
 }
